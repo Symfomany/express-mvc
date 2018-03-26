@@ -23,6 +23,7 @@ app.use(
 );
 app.use(
   sassMiddleware({
+    // sass middleware
     src: path.join(__dirname, "public"),
     dest: path.join(__dirname, "public"),
     indentedSyntax: true,
