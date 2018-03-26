@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    h1="Page Liste des articles"
+    table.table
+        thead
+            tr
+            th(scope='col') #
+            th(scope='col') Title
+            th(scope='col') Description
+            th(scope='col') Action
+        tbody
+        each elt, index in articles
+            tr
+                td
+                    a(href=elt.id) #{elt.id}
+                td 
+                    a(href=elt.id) #{elt.title}
+                td=elt.description
+                td 
+                    a(href=`update/${elt.id}`, class="btn btn-warning") 
+                        i.glyphicon.glyphicon-pencil
+                        |  Modifier
+                    a(href=`remove/${elt.id}`, class="btn btn-danger") 
+                        i.glyphicon.glyphicon-minus
+                        |  Supprimer
+    a(href="create", class="btn btn-default") Créer un article

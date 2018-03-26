@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    h1="Modifier un article"
+    form( method='post', action=`/articles/store/${article.id}`)
+        .form-group
+            label(for='title') Titre
+            input#title.form-control(type='text',value=article.title, name='title', placeholder='Un joli titre')
+        .form-group
+            label(for='description') Description
+            textarea#description.form-control(name='description', placeholder='Une jolie description') #{article.description}
+        .form-group
+            label(for='category') Category
+            select#category.form-control(name='category_id')
+                option(value="1") Actu
+                option(value="2") Sport
+                option(value="3") Technologie
+                option(value="4") Economie
+        button.btn.btn-primary(type='submit') Créer un article
