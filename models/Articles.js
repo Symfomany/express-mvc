@@ -9,9 +9,27 @@ const Articles = (sequelize, DataTypes) => {
     "Articles", // name of Model
     {
       // fields
-      title: DataTypes.STRING,
-      description: DataTypes.STRING,
-      category_id: DataTypes.INTEGER
+      title: { type: DataTypes.STRING, unique: "theTitle", notEmpty: true },
+      description: { type: DataTypes.TEXT, is: ["^[a-z]{10,}$", "i"] },
+      active: { type: DataTypes.INTEGER },
+      datePublication: { type: DataTypes.DATE, isDate: true },
+      note: { type: DataTypes.INTEGER, isInt: true, min: 1, max: 5 },
+      category_id: { type: DataTypes.INTEGER }
+    },
+    {
+      getterMethods: {
+        dateFr() {
+          function pad(s) {
+            return s < 10 ? "0" + s : s;
+          }
+          var d = new Date(this.datePublication);
+          return [
+            pad(d.getDate()),
+            pad(d.getMonth() + 1),
+            d.getFullYear()
+          ].join("/");
+        }
+      }
     },
     {
       classMethods: {

@@ -9,11 +9,37 @@ block content
         .form-group
             label(for='description') Description
             textarea#description.form-control(name='description', placeholder='Une jolie description') #{article.description}
+        
+        .form-check-inline
+            input#exampleRadios1.form-check-input(type='radio', name='note', value='1',checked=article.note == 1)
+            label.form-check-label(for='exampleRadios1')
+                | 1
+        .form-check-inline
+            input#exampleRadios2.form-check-input(type='radio', name='note', value='2',checked=article.note == 2)
+            label.form-check-label(for='exampleRadios2')
+                | 2
+        .form-check-inline
+            input#exampleRadios3.form-check-input(type='radio', name='note', value='3',checked=article.note == 3)
+            label.form-check-label(for='exampleRadios3')
+                | 3
+        .form-check-inline
+            input#exampleRadios4.form-check-input(type='radio', name='note', value='4',checked=article.note == 4)
+            label.form-check-label(for='exampleRadios4')
+                | 4
+        .form-check-inline
+            input#exampleRadios5.form-check-input(type='radio', name='note', value='5',checked=article.note == 5)
+            label.form-check-label(for='exampleRadios5')
+                | 5  
         .form-group
             label(for='category') Category
             select#category.form-control(name='category_id')
-                option(value="1") Actu
-                option(value="2") Sport
-                option(value="3") Technologie
-                option(value="4") Economie
+                option(value="1", selected=article.category_id == 1) Actu 
+                option(value="2", selected=article.category_id == 2) Sport
+                option(value="3", selected=article.category_id == 3) Technologie
+                option(value="4", selected=article.category_id == 4) Economie
+
+        .form-check
+            input#active.form-check-input.position-static(type='checkbox',name="active", checked=article.active == 1)
+            label.form-check-label(for='active')
+                | Artile actif ?
         button.btn.btn-primary(type='submit') Créer un article

@@ -1,13 +1,17 @@
 extends ../layout
 
 block content
-    h1="Page Liste des articles"
+    include ../partial/search.pug
+    h1="Liste des articles"
     table.table
         thead
             tr
             th(scope='col') #
             th(scope='col') Title
             th(scope='col') Description
+            th(scope='col') Date de publication
+            th(scope='col') Note
+            th(scope='col') Visible
             th(scope='col') Action
         tbody
         each elt, index in articles
@@ -17,11 +21,28 @@ block content
                 td 
                     a(href=elt.id) #{elt.title}
                 td=elt.description
+                td=(elt.dateFr)
+                td=(elt.note)
+                td
+                    if elt.active === true
+                        i.fa.fa-eye
+                    else
+                        i.fa.fa-eye-slash
                 td 
+                    if elt.active === 1
+                        a(href=`invisible/${elt.id}`, class="btn btn-danger") 
+                            i.glyphicon.glyphicon-pencil
+                            |  Invisible
+                    else
+                        a(href=`visible/${elt.id}`, class="btn btn-success") 
+                                i.glyphicon.glyphicon-pencil
+                                |  Visible
                     a(href=`update/${elt.id}`, class="btn btn-warning") 
                         i.glyphicon.glyphicon-pencil
                         |  Modifier
                     a(href=`remove/${elt.id}`, class="btn btn-danger") 
                         i.glyphicon.glyphicon-minus
                         |  Supprimer
-    a(href="create", class="btn btn-default") Créer un article
+    a(href="create", class="btn btn-primary")
+      i.glyphicon.glyphicon-plus
+      |  Créer un article

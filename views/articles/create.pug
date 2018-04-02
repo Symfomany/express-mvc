@@ -10,6 +10,31 @@ block content
             label(for='description') Description
             textarea#description.form-control(name='description',placeholder='Une jolie description')
         .form-group
+            label(for='date') Date de publication
+            input#datePublication.form-control(type='date', name='datePublication', placeholder='dd/mm/YYYY')
+        
+        .form-check-inline
+            input#exampleRadios1.form-check-input(type='radio', name='note', value='1')
+            label.form-check-label(for='exampleRadios1')
+                | 1
+        .form-check-inline
+            input#exampleRadios2.form-check-input(type='radio', name='note', value='2')
+            label.form-check-label(for='exampleRadios2')
+                | 2
+        .form-check-inline
+            input#exampleRadios3.form-check-input(type='radio', name='note', value='3', checked)
+            label.form-check-label(for='exampleRadios3')
+                | 3
+        .form-check-inline
+            input#exampleRadios4.form-check-input(type='radio', name='note', value='4')
+            label.form-check-label(for='exampleRadios4')
+                | 4
+        .form-check-inline
+            input#exampleRadios5.form-check-input(type='radio', name='note', value='5')
+            label.form-check-label(for='exampleRadios5')
+                | 5  
+        
+        .form-group
             label(for='category') Category
             select#category.form-control(name='category_id')
                 option(value="1") Actu
@@ -17,5 +42,8 @@ block content
                 option(value="3") Technologie
                 option(value="4") Economie
 
-                
+        .form-check
+            input#active.form-check-input.position-static(type='checkbox', value='1',name="active")
+            label.form-check-label(for='active')
+                | Artile actif ?
         button.btn.btn-primary(type='submit') Créer un article

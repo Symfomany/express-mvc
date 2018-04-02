@@ -4,6 +4,10 @@
 
 Curated list of express.js resources
 
+### Rendering a template
+
+https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1
+
 ## Contents
 
 * [General](#general)

@@ -1,5 +1,7 @@
 const db = require(`../models/index.js`);
-
+/**
+ * Class Articles Controller
+ */
 class ArticlesController {
   /**
    * Liste of Articles
@@ -71,6 +73,34 @@ class ArticlesController {
     const id = req.params.id;
     db.Articles.findById(id).then(article =>
       res.render("articles/show", { article })
+    );
+  }
+
+  /**
+   * Render visible
+   * @param {*} req
+   * @param {*} res
+   */
+  visible(req, res) {
+    const id = req.params.id;
+    db.Articles.findById(id).then(article =>
+      article
+        .update({ active: 1 })
+        .then(result => res.redirect("/articles/liste"))
+    );
+  }
+
+  /**
+   * Render invisible an article
+   * @param {*} req
+   * @param {*} res
+   */
+  invisible(req, res) {
+    const id = req.params.id;
+    db.Articles.findById(id).then(article =>
+      article
+        .update({ active: 0 })
+        .then(result => res.redirect("/articles/liste"))
     );
   }
 }

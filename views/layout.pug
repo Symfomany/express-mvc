@@ -3,9 +3,11 @@ html
   head
     title= title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
-    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/stylesheets/main.css")
   body
     include partial/header.pug
     div(class="container")
       block content
+    script(src="/javascripts/articles.js")
     //- include partial/footer.pug
