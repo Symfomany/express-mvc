@@ -55,6 +55,7 @@ https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1
 * [Express application generator](https://expressjs.com/en/starter/generator.html) - a generator to scaffold the basic structure of a express project
 * [Express mvc generator](https://github.com/rajikaimal/express-mvc) - modified express generator with MVC architecture
 * [Yeoman express generator - generator-express](https://github.com/petecoop/generator-express) - a yeoman generator
+* [express-email-otp-login](https://github.com/manishgupta412/express-email-otp-login) - passwordless login for Express with email one-time codes and magic links, sent via the Mailtrap Email API. TypeScript, SQLite, rate limiting
 
 ## Middleware
 
