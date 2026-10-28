@@ -83,6 +83,7 @@ https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1
 ## Addons
 
 * [Kraken.js](http://krakenjs.com) - kraken is a secure and scalable layer that extends express by providing structure and convention
+* [express-email-otp-login](https://github.com/parv15/express-email-otp-login) - passwordless login for Express with email one-time codes and magic links
 
 ## License
 
