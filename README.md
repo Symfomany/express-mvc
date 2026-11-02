@@ -79,6 +79,7 @@ https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1
 * [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) - production Best Practices: Security
 * [Security tips from NodeSource](https://nodesource.com/blog/nine-security-tips-to-keep-express-from-getting-pwned/) - 9 Security Tips to Keep Express from Getting Pwned
 * [Helmet.js](https://github.com/helmetjs/helmet) - help secure Express apps with various HTTP headers
+* [express-email-otp-login](https://github.com/parv15/express-email-otp-login) - passwordless login for Express with email one-time codes and magic links, hashed single-use codes and rate limiting
 
 ## Addons
 
